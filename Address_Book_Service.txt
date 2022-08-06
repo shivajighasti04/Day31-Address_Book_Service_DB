@@ -1,6 +1,6 @@
 Enter password: ***********
 Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 40
+Your MySQL connection id is 42
 Server version: 8.0.30 MySQL Community Server - GPL
 
 Copyright (c) 2000, 2022, Oracle and/or its affiliates.
@@ -23,7 +23,21 @@ mysql> show databases;
 | student                  |
 | sys                      |
 +--------------------------+
-7 rows in set (0.05 sec)
+7 rows in set (0.00 sec)
 
 mysql> use  address_book_service;
 Database changed
+mysql> desc Address_Book;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| First_Name   | varchar(30)  | YES  |     | NULL    |       |
+| Last_Name    | varchar(30)  | YES  |     | NULL    |       |
+| Address      | varchar(100) | YES  |     | NULL    |       |
+| City         | varchar(50)  | YES  |     | NULL    |       |
+| State        | varchar(30)  | YES  |     | NULL    |       |
+| Zip_Code     | int          | YES  |     | NULL    |       |
+| Phone_Number | int          | YES  |     | NULL    |       |
+| email        | varchar(30)  | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+8 rows in set (0.05 sec)
