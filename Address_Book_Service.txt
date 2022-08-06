@@ -41,3 +41,32 @@ mysql> desc Address_Book;
 | email        | varchar(30)  | YES  |     | NULL    |       |
 +--------------+--------------+------+-----+---------+-------+
 8 rows in set (0.05 sec)
+
+mysql> insert into Address_Book values('Raj', 'Gupta', 'FirstLane', 'Merot', 'Delhi', 123, 985464436, 'raj@hsjsks');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select * from Address_Book;
++------------+-----------+-----------+-------+-------+----------+--------------+------------+
+| First_Name | Last_Name | Address   | City  | State | Zip_Code | Phone_Number | email      |
++------------+-----------+-----------+-------+-------+----------+--------------+------------+
+| Raj        | Gupta     | FirstLane | Merot | Delhi |      123 |    985464436 | raj@hsjsks |
++------------+-----------+-----------+-------+-------+----------+--------------+------------+
+1 row in set (0.00 sec)
+
+mysql> insert into Address_Book values('Sagar', 'Patil', 'SecondLane', 'Kolhapur', 'Maharashtra', 231, 647377722, 'sagar@sshshs');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into Address_Book values('Pooja', 'Jadhav', 'ThirdFloor', 'Panji', 'Goa', 766, 7456156717, 'pooja@jskjjshs');
+ERROR 1264 (22003): Out of range value for column 'Phone_Number' at row 1
+mysql> insert into Address_Book values('Pooja', 'Jadhav', 'ThirdFloor', 'Panji', 'Goa', 766, 74561567, 'pooja@jskjjshs');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select * from Address_Book;
++------------+-----------+------------+----------+-------------+----------+--------------+----------------+
+| First_Name | Last_Name | Address    | City     | State       | Zip_Code | Phone_Number | email          |
++------------+-----------+------------+----------+-------------+----------+--------------+----------------+
+| Raj        | Gupta     | FirstLane  | Merot    | Delhi       |      123 |    985464436 | raj@hsjsks     |
+| Sagar      | Patil     | SecondLane | Kolhapur | Maharashtra |      231 |    647377722 | sagar@sshshs   |
+| Pooja      | Jadhav    | ThirdFloor | Panji    | Goa         |      766 |     74561567 | pooja@jskjjshs |
++------------+-----------+------------+----------+-------------+----------+--------------+----------------+
+3 rows in set (0.00 sec)
